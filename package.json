@@ -1,6 +1,6 @@
 {
   "name": "@firstandthird/function-cache",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "in-memory function memoizer",
   "main": "index.js",
   "scripts": {
