@@ -3,7 +3,7 @@ workflow "build and test" {
   resolves = [
     "test",
     "build",
-    "lint"
+    "lint",
   ]
 }
 
@@ -13,13 +13,18 @@ action "build" {
 }
 
 action "lint" {
-  needs = "build"
+  needs = [
+    "build"
+  ],
   uses = "actions/npm@master"
   args = "run lint"
 }
 
 action "test" {
-  needs = "build"
+  needs = [
+    "build",
+    "lint",
+  ]
   uses = "actions/npm@master"
   args = "test"
 }
